@@ -3,6 +3,13 @@
 Created on Mon Oct 24 21:06:41 2016
 
 @author: Risto
+Järgnevatele funktsioonidele antakse argumendiks 5 x 5 tabel, milles iga element on kas täisarv lõigust 1 - 75 või täht X. Täht X sümboliseerib seda, et vastav arv on juba loositud.
+
+1. Koostada funktsioon nurkademänguks_vaja, mis tagastab järjendi arvudest, mida on veel vaja loosida selleks, et antud mänguväli võidaks nurkademängu.
+
+2. Koostada funktsioon diagonaalidemänguks_vaja, mis tagastab järjendi arvudest, mida on veel vaja loosida selleks, et antud mänguväli võidaks diagonaalidemängu.
+
+3. Koostada funktsioon täismänguks_vaja, mis tagastab järjendi arvudest, mida on veel vaja loosida selleks, et antud mänguväli võidaks täismängu.
 """
 
 #from os import chdir

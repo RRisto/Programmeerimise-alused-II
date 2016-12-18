@@ -3,6 +3,13 @@
 Created on Mon Nov  7 18:35:39 2016
 
 @author: Risto
+Kirjutada programm, mis küsib kasutajalt failinime, loeb vastava nimega failist täidetud Sudoku tabeli ning kontrollib, kas see on korrektne Sudoku lahendus. Kui lahendus on korrektne, väljastada "OK" ja kui lahendus on mittekorrektne, siis väljastada "Viga", millele võib järgneda info vea asukoha kohta.
+
+Failis on Sudoku tabel esitatud nii, et iga arvu vahel on üks tühik. Näitefail (korrektne). Näitefail (vigane).
+
+Sudoku mängureeglitega saab tutvuda näiteks siin.
+
+Ette on antud kõikide 3x3 kastide kontrollimise funktsioon. Uurige, kuidas see töötab ja rakendage seda oma programmis sobivalt. Samuti lisage ridade ja veergude kontrollimine.
 """
 failinimi=input("Sisestage failinimi: ")
 
