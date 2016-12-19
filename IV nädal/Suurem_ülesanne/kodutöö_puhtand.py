@@ -105,6 +105,7 @@ def puhastaja(tokenslist, myralist):
 from nltk.stem.porter import PorterStemmer
 
 def stemming(tokens):
+    """funktsioon, mis ühtlustab sõnade kuju lõigates pöörde- ja käänel"""
     p_stemmer = PorterStemmer()
     stemmed=[]
     for j in range(len(tokens)):
