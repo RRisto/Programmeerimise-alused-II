@@ -15,28 +15,62 @@ twitter = Twython('C8Jpl39xJIVC6uw4zb6Rj809s','VjTKEep9JMmrk8mezvSF3C4igtKkIWg2G
 #korraga saab ühe päringuga 100 tweeti, võtame 1000 ikka
 #teeme funktsiooni
 #võtame välja teksti
-def teksti_eraldaja(tweedid):
-    tekst=[]
-    for i in range(len(tweedid['statuses'])):
-        tekst.append(tweedid['statuses'][i]['text'])
-    #teeme eraldi listidest ühe listi
-    #tulem=''.join(tekst)   
-    return tekst
+#==============================================================================
+# def teksti_eraldaja(tweedid):
+#     tekst=[]
+#     for i in range(len(tweedid['statuses'])):
+#         tekst.append(tweedid['statuses'][i]['text'])
+#     #teeme eraldi listidest ühe listi
+#     #tulem=''.join(tekst)   
+#     return tekst
+#==============================================================================
     
 import math as math
 
+#==============================================================================
+# def allalaadija(märksõna, kogus, keel='en'):
+#     tweedid=twitter.search(q=märksõna,lang=keel, count=100)
+#     tulem=teksti_eraldaja(tweedid)
+#     loopideArv=math.ceil(kogus/100)
+#     minid=min_id(tweedid)
+#     for i in range(loopideArv-1):
+#         uuedtweedid=twitter.search(q=märksõna,lang=keel, count=100, 
+#                                    max_id=minid)
+#         tulem.extend(teksti_eraldaja(uuedtweedid))
+#         minid=min_id(uuedtweedid)
+#         print("Tsükkel nr:", str(i+2)+ ", veel tsükleid:",str(loopideArv-i-2))
+#     return tulem
+#==============================================================================
+
+def teksti_eraldaja(tweedid):
+    tekst=[]
+    for i in range(len(tweedid)):
+        tekst.append(tweedid[i]['text'])  
+    return tekst   
+    
 def allalaadija(märksõna, kogus, keel='en'):
-    tweedid=twitter.search(q=märksõna,lang=keel, count=100)
-    tulem=teksti_eraldaja(tweedid)
     loopideArv=math.ceil(kogus/100)
+    print("Tsükkel nr:", str(1)+ ", veel tsükleid:",str(loopideArv-1))
+    tweedid=twitter.search(q=märksõna,lang=keel, count=100)
+    tulem=tweedid['statuses']
     minid=min_id(tweedid)
     for i in range(loopideArv-1):
+        print("Tsükkel nr:", str(i+2)+ ", veel tsükleid:",str(loopideArv-i-2))
         uuedtweedid=twitter.search(q=märksõna,lang=keel, count=100, 
                                    max_id=minid)
-        tulem.extend(teksti_eraldaja(uuedtweedid))
+        tulem+=uuedtweedid['statuses']
         minid=min_id(uuedtweedid)
-        print("Tsükkel nr:", str(i+2)+ ", veel tsükleid:",str(loopideArv-i-2))
     return tulem
+    
+estonia=allalaadija('estonia', 2000)
+
+#==============================================================================
+# import json
+# json.dump(proov, open("proov.txt",'w'))
+# proov2=json.load(open("proov.txt"))
+# 
+# tkst=teksti_eraldaja(proov2)
+#==============================================================================
 
 def min_id(tweedid):
     """fun mis leiab allalaaditud tweetide id miinimumi, selle saab
@@ -77,8 +111,8 @@ def stemming(tokens):
         stemmed.append([p_stemmer.stem(i) for i in tokens[j]]) 
     return stemmed
     
-#estonia=allalaadija('estonia', 1000)
-#latvia=allalaadija('latvia', 1000)
+#estonia=allalaadija('estonia', 2000)
+#latvia=allalaadija('latvia', 2000)
 #salvestame, et igal korral ei peaks uue päringu tegema
 import json
 #json.dump(estonia, open("estonia.txt",'w'))
@@ -86,9 +120,12 @@ import json
 #kui on vaja failist üles laadida:
 estonia = json.load(open("estonia.txt"))
 latvia=json.load(open("latvia.txt"))
+#eraldame teksti
+estoniatkst=teksti_eraldaja(estonia)
+latviatkst=teksti_eraldaja(latvia)
 #tokeniseerime
-esttoken=tokeniseerija(estonia)
-lattoken=tokeniseerija(latvia)
+esttoken=tokeniseerija(estoniatkst)
+lattoken=tokeniseerija(latviatkst)
 #puhastame
 estpuhas=puhastaja(esttoken,['estonia'])
 latpuhas=puhastaja(lattoken,['latvia'])

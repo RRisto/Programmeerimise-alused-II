@@ -11,10 +11,9 @@ from twython import Twython
 twitter = Twython('C8Jpl39xJIVC6uw4zb6Rj809s','VjTKEep9JMmrk8mezvSF3C4igtKkIWg2GObwuJ6TCWB8qsL6q4',
                   '900293220-O76OTSxQzZeB7hvjlwujXYg7rDzN4Dy7bF4LBZn8', 'LGjLVWtiB8gloVC2nhi04KroTlJLtWiic803qiN296JFc')
 
-estonia=twitter.search(q='estonia',lang='en', count=100)
 
 estonia2=twitter.search(q='estonia',lang='en', count=100, max_id=idmax)
-latvia=twitter.search(q='latvia',lang='en', count=100)
+latvia=twitter.search(q='russia',lang='en', count=10)
 #korraga saab ühe päringuga 100 tweeti, võtame 1000 ikka
 #teeme funktsiooni
 import math as math
