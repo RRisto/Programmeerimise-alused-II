@@ -599,3 +599,39 @@ def faktoriaal_saba(n, f=1):
  
 print(faktoriaal_saba(3))
 
+
+#proovin listi sisse stuffi
+lst=[[1, 2, "mina"], [3,4], (5,6),{"töö":"mkm", "kodu":"lasna"}, {7,8,9}]
+
+lst=[(1,2,3),{"töö":"mkm", "kodu":"lasna"}]
+def prindi_tuple(andmed):
+    for i in range(len(andmed)):
+        print(andmed[i])
+        
+def prindi_dict(andmed):
+    for i in andmed.keys():
+        print(andmed[i])
+
+def prindi_set(andmed):
+    for i in andmed:
+        print(i)
+def prindi_list(andmed):
+    for i in range(len(andmed)):
+        print(andmed[i][j])
+        
+for i in range(len(lst)):
+    if isinstance(lst[i], tuple):
+        prindi_tuple(lst[i])
+    if isinstance(lst[i], dict):
+        prindi_dict(lst[i])
+    if isinstance(lst[i], list):
+        prindi_list(lst[i])
+    if isinstance(lst[i], set):
+        prindi_set(lst[i])
+        
+        
+        
+        
+        
+        
+        
