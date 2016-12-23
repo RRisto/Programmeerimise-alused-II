@@ -147,6 +147,8 @@ estmudel = LdaModel(corpus=estcorpus, id2word=estdictionary,
                     random_state=1)
 #topic term
 estmudel.get_topic_terms(2)
+#perplexity (pole küll korrektne, kuna peaks kasutama houldouti peal)
+estmudel.log_perplexity(estcorpus)
 #topicud
 estmudel.show_topics(3)
 estmudel.print_topics(num_topics=3, num_words=3)

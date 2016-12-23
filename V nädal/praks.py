@@ -498,8 +498,8 @@ tabel = [[1, -43, 5, 3, 7], [-4, 6, 7, 9, 8], [5, 6, -7, -1, 4]]
 
 loendaja = 0
 for el in tabel:
- if on_suuremaid(el, 6):
-  loendaja += 1
+    if on_suuremaid(el, 6):
+        loendaja += 1
 
 print(loendaja)
 
@@ -630,8 +630,28 @@ for i in range(len(lst)):
         prindi_set(lst[i])
         
         
+ennik={1,2,(3,4)}        
+for i in ennik:
+    print(i)        
+ 
+
+
+sonastik={"lst":[1,2,3], "ennik":(1,2,3)}       
+sonastik['lst']
+sonastik['ennik']
         
-        
-        
-        
-        
+       
+       
+dict={"töö":"mkm", "kodu":"lasna"}
+type(dict.keys())     
+list(dict.keys())
+       
+     
+ennik=(1,2,3)
+
+ennik2=ennik[:]
+proov=zip([1,2,3], [4,5,6])
+proov
+for i in proov:
+    print(i)
+
