@@ -642,9 +642,9 @@ sonastik['ennik']
         
        
        
-dict={"töö":"mkm", "kodu":"lasna"}
-type(dict.keys())     
-list(dict.keys())
+dict1={"töö":"mkm", "kodu":"lasna"}
+type(dict1.keys())     
+list(dict1.keys())
        
      
 ennik=(1,2,3)
@@ -654,4 +654,47 @@ proov=zip([1,2,3], [4,5,6])
 proov
 for i in proov:
     print(i)
+
+ennik
+ennik.add(4)
+
+
+lst1=[1,2,3]
+lst2=[4,5,6]
+
+lst1.append(lst2)
+
+lst1.extend(lst2)
+
+lst1=[1,2,3]
+lst2=[4,5,6]
+lst1+lst2
+
+#pole saama
+a = [1, 2, 3]
+b=a
+b=b+[4]
+a
+b
+#mis
+a = [1, 2, 3]
+b=a
+a+=[1]
+a
+b
+
+#koopia tegemin
+from copy import deepcopy
+a = [1,2,[3,3]]
+b = deepcopy(a)
+a[2].append(4)
+a
+b
+c=a.copy()
+c[2].append("proov")
+c
+c[0].append("proov2")
+
+#töötab, listide ja ennikute puhul mitte
+{(1,2), (3,4,5)}
 
