@@ -695,6 +695,14 @@ c[2].append("proov")
 c
 c[0].append("proov2")
 
-#töötab, listide ja ennikute puhul mitte
+#töötab, listide ja hulkade puhul mitte
 {(1,2), (3,4,5)}
+
+[1,2]==[2,1]#false
+{1,2}=={2,1}#true
+{"mina":23, "sina":24}=={"sina":24,"mina":23}
+sonas={"mina":23, "sina":24}
+"mina" in sonas
+
+
 
