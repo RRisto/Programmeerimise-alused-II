@@ -142,8 +142,6 @@ for i in range(len(tulem)):
     hobinimed.append(tulem[i][0].strip())
 
 hobialad=[]
-for i in range(len(tulem))
-
 
 hobialad=andmed_sisse2('hobid.txt')
 #eemaldan tühikud
@@ -207,7 +205,6 @@ for i in range(len(alahinded)):
     alakeskmine.append(sum(alahinded[i])/len(alahinded))
 #alade nimed 
 ala    
-
-                
+ 
 
    
